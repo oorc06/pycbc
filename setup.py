@@ -232,35 +232,35 @@ for name in cythonext:
 # Not all modules work like this:
 e = Extension("pycbc.fft.fftw_pruned_cython",
               ["pycbc/fft/fftw_pruned_cython.pyx"],
-              extra_compile_args=cython_compile_args,
-              extra_link_args=cython_link_args,
+              extra_compile_args=["-O3", "-stdlib=libc++"],
+              extra_link_args=["-stdlib=libc++"],
               compiler_directives={'embedsignature': True})
 ext.append(e)
 e = Extension("pycbc.events.eventmgr_cython",
               ["pycbc/events/eventmgr_cython.pyx"],
-              extra_compile_args=cython_compile_args,
-              extra_link_args=cython_link_args,
+              extra_compile_args=["-O3", "-stdlib=libc++"],
+              extra_link_args=["-stdlib=libc++"],
               compiler_directives={'embedsignature': True})
 ext.append(e)
 e = Extension("pycbc.events.simd_threshold_cython",
               ["pycbc/events/simd_threshold_cython.pyx"],
               language='c++',
-              extra_compile_args=cython_compile_args,
-              extra_link_args=cython_link_args,
+              extra_compile_args=["-O3", "-stdlib=libc++"],
+              extra_link_args=["-stdlib=libc++"],
               compiler_directives={'embedsignature': True})
 ext.append(e)
 e = Extension("pycbc.filter.simd_correlate_cython",
               ["pycbc/filter/simd_correlate_cython.pyx"],
               language='c++',
-              extra_compile_args=cython_compile_args,
-              extra_link_args=cython_link_args,
+              extra_compile_args=["-O3", "-stdlib=libc++"],
+              extra_link_args=["-stdlib=libc++"],
               compiler_directives={'embedsignature': True})
 ext.append(e)
 e = Extension("pycbc.waveform.decompress_cpu_cython",
               ["pycbc/waveform/decompress_cpu_cython.pyx"],
               language='c++',
-              extra_compile_args=cython_compile_args,
-              extra_link_args=cython_link_args,
+              extra_compile_args=["-O3", "-stdlib=libc++"],
+              extra_link_args=["-stdlib=libc++"],
               compiler_directives={'embedsignature': True})
 ext.append(e)
 

@@ -224,8 +224,8 @@ if not sys.platform == 'darwin':
 for name in cythonext:
     e = Extension("pycbc.%s_cpu" % name,
                   ["pycbc/%s_cpu.pyx" % name.replace('.', '/')],
-                  extra_compile_args=cython_compile_args,
-                  extra_link_args=cython_link_args,
+                  extra_compile_args=["-O3", "-stdlib=libc++"],
+                  extra_link_args=["-stdlib=libc++"],
                   compiler_directives={'embedsignature': True})
     ext.append(e)
 
